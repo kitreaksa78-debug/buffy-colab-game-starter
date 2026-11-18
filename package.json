@@ -1,0 +1,13 @@
+{
+  "name": "buffy-colab-game-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "One-liner Colab game starter page + script host",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

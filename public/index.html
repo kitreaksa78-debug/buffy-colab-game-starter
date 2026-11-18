@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Buffy · Colab Game Starter</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; padding: 32px 18px 64px;
+    background: radial-gradient(1200px 600px at 50% -10%, #1b2a4a 0%, #0b0f19 60%, #070a11 100%);
+    color: #e8eefc; font-family: "Noto Sans Khmer", "Kantumruy Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: clamp(22px, 4.4vw, 34px); margin: 0 0 6px; letter-spacing: -0.3px; }
+  .sub { color: #9fb0cc; margin: 0 0 26px; font-size: 15px; }
+  .card {
+    background: #111827cc; border: 1px solid #22304d; border-radius: 14px;
+    padding: 16px 18px; margin: 0 0 16px;
+  }
+  .card h2 { margin: 0 0 10px; font-size: 16px; color: #cddcff; font-weight: 600; }
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13.5px;
+  }
+  pre {
+    margin: 0; padding: 14px; overflow-x: auto; border-radius: 10px;
+    background: #0a1120; border: 1px solid #1e2b45; color: #b8f5d0; white-space: pre;
+  }
+  a { color: #7fb2ff; }
+  ul { margin: 6px 0 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  .warn { border-color: #4a3420; background: #2a1e12cc; }
+  .warn h2 { color: #ffd8a8; }
+  .muted { color: #8fa2c0; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Buffy · Colab Game Starter</h1>
+  <p class="sub">បន្ទាត់តែមួយសម្រាប់ Google Colab ឬ Kaggle — បើកហ្គេម HTML5/WASM ហើយបោះ link ឲ្យលេងក្នុង browser។</p>
+
+  <div class="card">
+    <h2>១. បញ្ជាតែមួយបន្ទាត់</h2>
+    <pre>!curl -fsSL <span class="origin">…</span>/buffy-start.sh | sh</pre>
+    <p class="muted">បើ zip ហ្គេមនៅក្នុង <code>/content</code> រួចហើយ — រត់ត្រឹមនេះគ្រប់គ្រាន់។</p>
+  </div>
+
+  <div class="card">
+    <h2>២. បើហ្គេមមាន link ទាញយកផ្ទាល់</h2>
+    <pre>!curl -fsSL <span class="origin">…</span>/buffy-start.sh \
+  | GAME_URL="https://…/game.zip" sh</pre>
+  </div>
+
+  <div class="card warn">
+    <h2>⚠️ ហ្គេមត្រូវជា browser game</h2>
+    <p class="muted">zip ត្រូវមាន <code>index.html</code> (ដូចហ្គេម itch.io ដែលមានប៊ូតុង “Run in browser”)។
+    ហ្គេម PC (.exe, Windows/DirectX, 10+ GB) ដូចជា Sleeping Dogs, GTA V លេងក្នុង browser មិនបានទេ។</p>
+  </div>
+
+  <div class="card">
+    <h2>ជម្រើសបន្ថែម</h2>
+    <ul>
+      <li><code>GAME_ZIP=/content/mygame.zip</code> — ប្រើ zip ក្នុងម៉ាស៊ីន</li>
+      <li><code>COI=1</code> — បើក COOP/COEP សម្រាប់ហ្គេមដែលត្រូវការ SharedArrayBuffer</li>
+      <li><code>TUNNEL=pinggy</code> ឬ <code>lhr</code> — ជ្រើស tunnel ជាក់លាក់</li>
+      <li><code>PORT=8000</code>, <code>SKIP_TUNNEL=1</code>, <code>STOP=1</code> (បិទ server)</li>
+    </ul>
+  </div>
+
+  <p class="muted">ស្គ្រីប៖ <a href="/buffy-start.sh">/buffy-start.sh</a> · <a href="/kaggle-start.sh">/kaggle-start.sh</a></p>
+</div>
+<script>
+  document.querySelectorAll('.origin').forEach(function (el) {
+    el.textContent = location.origin;
+  });
+</script>
+</body>
+</html>
